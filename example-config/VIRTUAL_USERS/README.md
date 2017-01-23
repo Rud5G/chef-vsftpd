@@ -16,7 +16,8 @@ See example file "logins.txt" - this specifies "tom" with password "foo" and
 "fred" with password "bar".
 Whilst logged in as root, create the actual database file like this:
 
-db_load -T -t hash -f logins.txt /etc/vsftpd_login.db
+    $ db_load -T -t hash -f logins.txt /etc/vsftpd_login.db
+    
 (Requires the Berkeley db program installed).
 NOTE: Many systems have multiple versions of "db" installed, so you may
 need to use e.g. db3_load for correct operation. This is known to affect
@@ -27,7 +28,7 @@ on your system).
 This will create /etc/vsftpd_login.db. Obviously, you may want to make sure
 the permissions are restricted:
 
-chmod 600 /etc/vsftpd_login.db
+    $ chmod 600 /etc/vsftpd_login.db
 
 For more information on maintaing your login database, look around for
 documentation on "Berkeley DB", e.g.

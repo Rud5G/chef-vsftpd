@@ -1,7 +1,14 @@
 package 'openssl'
 package 'db-util'
 
-template '/etc/pam.d/vsftpd' do
+
+user node['vsftpd']['config']['guest_username'] do
+  comment 'vsftpd virtual user'
+  home node['vsftpd']['config']['guest_home']
+  shell '/bin/false'
+end
+
+template File.join('/etc/pam.d', node['vsftpd']['config']['pam_service_name']) do
   source 'vsftpd-pam-virtual.erb'
   owner 'root'
   group 'root'
@@ -9,7 +16,7 @@ template '/etc/pam.d/vsftpd' do
   backup false
 end
 
-directory node['vsftpd']['user_config_dir'] do
+directory node['vsftpd']['config']['user_config_dir'] do
   owner 'root'
   group 'root'
   mode 0755
