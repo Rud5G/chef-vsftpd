@@ -1,27 +1,13 @@
-  # anonymous_enable=NO
-  # local_enable=YES
-  # write_enable=NO
-  # anon_upload_enable=NO
-  # anon_mkdir_write_enable=NO
-  # anon_other_write_enable=NO
-  # chroot_local_user=YES
-  # guest_enable=YES
-  # guest_username=virtual
-  # listen=YES
-  # listen_port=10021
-  # pasv_min_port=30000
-  # pasv_max_port=30999
-
-
+# see
 default['vsftpd']['config']['pasv_enable'] = true
 
 if node['vsftpd']['config']['pasv_enable']
-  default['vsftpd']['config']['pasv_address'] = (node['cloud'] && node['cloud']['public_ipv4']) || node['ipaddress']
+  # default['vsftpd']['config']['pasv_address'] = (node['cloud'] && node['cloud']['public_ipv4']) || node['ipaddress']
   default['vsftpd']['config']['pasv_min_port'] = '30000'
   default['vsftpd']['config']['pasv_max_port'] = '30999'
 end
 
-default['vsftpd']['config']['listen'] = false
+default['vsftpd']['config']['listen'] = true
 default['vsftpd']['config']['listen_port'] = 10021
 
 # influences the pam.d location
