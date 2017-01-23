@@ -10,21 +10,21 @@ Will use ssl certificates you specify in attributes and put into the files/defau
 
 ## REQUIREMENTS
 
-Only tested on Ubuntu 10.04 and the vsftpd that comes from the standard apt sources at the time this cookbook was created. No attempt has been made to support other target platforms or versions of vsftpd.
+Only tested on Ubuntu 14.04 and the vsftpd that comes from the standard apt sources at the time this cookbook was created. No attempt has been made to support other target platforms or versions of vsftpd.
 
 ## ATTRIBUTES
 
-* vsftod[:chroot_local_user] - If set to 'YES', then the chroot_list_file (contents of vsftpd[:chroot_users]) will specify list of local users to NOT chroot their home directories. If set to "NO" the users in chroot_list_file will have their home directories chroot'd. Default: "YES"
+    vsftpd[:chroot_local_user] - If set to 'YES', then the chroot_list_file (contents of vsftpd[:chroot_users]) will specify list of local users to NOT chroot their home directories. If set to "NO" the users in chroot_list_file will have their home directories chroot'd. Default: "YES"
 
-* vsftpd[:chroot_users] - Optional list of local usernames to be put in the chroot_list_file (/etc/vsftpd.chroot_list) file. Default: empty
+    vsftpd[:chroot_users] - Optional list of local usernames to be put in the chroot_list_file (/etc/vsftpd.chroot_list) file. Default: empty
 
-* vsftpd[:ssl_cert_path] - The pathname of the directory that the ssl cert file should live. Default: /etc/ssl/certs
+    vsftpd[:ssl_cert_path] - The pathname of the directory that the ssl cert file should live. Default: /etc/ssl/certs
 
-* vsftpd[:ssl_private_key_path] - The pathname of the directory that the ssl private key file should live. Default: /etc/ssl/private
+    vsftpd[:ssl_private_key_path] - The pathname of the directory that the ssl private key file should live. Default: /etc/ssl/private
 
-* vsftpd[:ssl_certs_basename] -Base name of the ssl cert PEM file and ssl private key filenames. Default: 'ftp.example.com' You will want it to be the FQDN of your host that you used to create the certs
+    vsftpd[:ssl_certs_basename] - Base name of the ssl cert PEM file and ssl private key filenames. Default: 'ftp.example.com' You will want it to be the FQDN of your host that you used to create the certs
 
-* vsftpd[:use_ssl_certs_from_cookbook] - If set, you must have the ssl public and private cert files in the cookbook's files directory. Default: true
+    vsftpd[:use_ssl_certs_from_cookbook] - If set, you must have the ssl public and private cert files in the cookbook's files directory. Default: true
 
 ## USAGE
 
