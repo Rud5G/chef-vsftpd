@@ -2,10 +2,7 @@
 
 ## DESCRIPTION
 
-Very Basic installation and configuration of vsftpd to support Secure (SSL) SFTP.
-
-Uses pretty close to standard vsftpd.conf. Mainly turns on ssl and adds require_ssl_reuse=No.
-Will use ssl certificates you specify in attributes and put into the files/default directory or files that are already installed on target server.
+Very Basic installation and configuration of vsftpd with virtual users to support Secure (SSL) SFTP.
 
 
 ## REQUIREMENTS
