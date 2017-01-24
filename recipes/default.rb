@@ -1,5 +1,7 @@
 package 'vsftpd'
 package 'ssl-cert'
+# for mkpasswd
+package 'whois'
 
 service 'vsftpd' do
   supports :status => true, :stop => true, :start => true, :restart => true
