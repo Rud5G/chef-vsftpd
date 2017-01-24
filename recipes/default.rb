@@ -1,10 +1,11 @@
 package 'vsftpd'
+package 'ssl-cert'
 
 service 'vsftpd' do
   supports :status => true, :stop => true, :start => true, :restart => true
-  case node["platform"]
-    when "ubuntu"
-      if node["platform_version"].to_f <= 14.04
+  case node['platform']
+    when 'ubuntu'
+      if node['platform_version'].to_f <= 14.04
         provider Chef::Provider::Service::Upstart
       end
     else

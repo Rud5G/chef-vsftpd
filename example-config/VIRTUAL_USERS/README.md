@@ -16,7 +16,7 @@ See example file "logins.txt" - this specifies "tom" with password "foo" and
 "fred" with password "bar".
 Whilst logged in as root, create the actual database file like this:
 
-    $ db_load -T -t hash -f logins.txt /etc/vsftpd_login.db
+    $ db_load -T -t hash -f /etc/vsftpd/logins.txt /etc/vsftpd/login.db
     
 (Requires the Berkeley db program installed).
 NOTE: Many systems have multiple versions of "db" installed, so you may
@@ -25,10 +25,10 @@ some Debian systems. The core issue is that pam_userdb expects its login
 database to be a specific db version (often db3, whereas db4 may be installed
 on your system).
 
-This will create /etc/vsftpd_login.db. Obviously, you may want to make sure
+This will create /etc/vsftpd/login.db. Obviously, you may want to make sure
 the permissions are restricted:
 
-    $ chmod 600 /etc/vsftpd_login.db
+    $ chmod 600 /etc/vsftpd/login.db
 
 For more information on maintaing your login database, look around for
 documentation on "Berkeley DB", e.g.
