@@ -20,3 +20,6 @@ create the password file with:
     $ echo "password" |mkpasswd -s -m sha-512 >> /etc/vsftpd/logins.txt
 
     $ db_load -T -t hash -f /etc/vsftpd/logins.txt /etc/vsftpd/login.db
+    
+    $ mkdir /home/ftpsite/users/"username"
+    
