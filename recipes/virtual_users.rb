@@ -14,7 +14,7 @@ end
 directory node['vsftpd']['guest_home'] do
   user node['vsftpd']['config']['guest_username']
   group node['vsftpd']['guest_group']
-  mode 0770
+  mode 0750
   notifies :create, 'user[' + node['vsftpd']['config']['guest_username'] + ']', :before
   action :nothing
 end

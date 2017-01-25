@@ -18,20 +18,20 @@ default['vsftpd']['config']['pam_service_name'] = 'vsftpd'
 default['vsftpd']['config']['nopriv_user'] = 'nobody'
 # default['vsftpd']['config']['setproctitle_enable'] = false
 
+default['vsftpd']['config']['write_enable'] = false
+default['vsftpd']['config']['anon_upload_enable'] = false
+default['vsftpd']['config']['anon_mkdir_write_enable'] = false
+default['vsftpd']['config']['anon_other_write_enable'] = false
+
+
 default['vsftpd']['config']['anonymous_enable'] = false
-
 default['vsftpd']['config']['local_enable'] = true
-default['vsftpd']['config']['write_enable'] = true
 default['vsftpd']['config']['local_umask'] = '022'
+
+
 # default['vsftpd']['config']['anon_root'] = nil
-default['vsftpd']['config']['anon_upload_enable'] = true
-default['vsftpd']['config']['anon_mkdir_write_enable'] = true
-default['vsftpd']['config']['anon_other_write_enable'] = true
-
-
 # default['vsftpd']['config']['chown_uploads'] = false
 # default['vsftpd']['config']['chown_username'] = 'ftp'
-
 # default['vsftpd']['config']['chmod_enable'] = true
 default['vsftpd']['config']['chroot_local_user'] = true
 

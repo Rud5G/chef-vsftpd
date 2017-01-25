@@ -21,5 +21,9 @@ create the password file with:
 
     $ db_load -T -t hash -f /etc/vsftpd/logins.txt /etc/vsftpd/login.db
     
-    $ mkdir /home/ftpsite/users/"username"
+    $ mkdir /home/ftpsite/users/username
+    
+    $ service vsftpd restart
+    
+    
     
