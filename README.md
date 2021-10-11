@@ -15,13 +15,13 @@ Only tested on Ubuntu 14.04 and the vsftpd that comes from the standard apt sour
 
 create the password file with:
 
-    $ echo "username" >> /etc/vsftpd/logins.txt
+    $ echo "$ftpusername" >> /etc/vsftpd/logins.txt
     
-    $ echo "password" |mkpasswd -s -m sha-512 >> /etc/vsftpd/logins.txt
+    $ echo "$ftppassword" |mkpasswd -s -m sha-512 >> /etc/vsftpd/logins.txt
 
     $ db_load -T -t hash -f /etc/vsftpd/logins.txt /etc/vsftpd/login.db
     
-    $ mkdir /home/ftpsite/users/username
+    $ mkdir /home/ftpsite/users/$ftpusername
     
     $ service vsftpd restart
     
